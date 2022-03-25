@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: Fredoka;
   font-display: swap;
@@ -32,4 +33,340 @@
   src: url("../fonts/Fredoka-SemiBold.woff2") format("woff2"), url("../fonts/Fredoka-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
+}
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/fontIcons/fontello.eot?29542910");
+  src: url("../fonts/fontIcons/fontello.eot?29542910#iefix") format("embedded-opentype"), url("../fonts/fontIcons/fontello.woff2?29542910") format("woff2"), url("../fonts/fontIcons/fontello.woff?29542910") format("woff"), url("../fonts/fontIcons/fontello.ttf?29542910") format("truetype"), url("../fonts/fontIcons/fontello.svg?29542910#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?29542910#fontello') format('svg');
+  }
+}
+*/
+[class^=icon_]:before, [class*=" icon_"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon_done:before {
+  content: "\e800";
+}
+
+/* '' */
+.icon_edit:before {
+  content: "\e801";
+}
+
+/* '' */
+.icon_update:before {
+  content: "\e802";
+}
+
+/* '' */
+.icon_cancel:before {
+  content: "\e803";
+}
+
+/* '' */
+.icon_delete:before {
+  content: "\e804";
+}
+
+/* '' */
+.icon_undone:before {
+  content: "\e805";
+}
+
+/* '' */
+.icon_delete {
+  color: #cc2900;
+}
+
+.icon_edit {
+  color: #ff8c1a;
+}
+
+.icon_done {
+  color: #33cc33;
+}
+
+.icon_update {
+  color: #ff8c1a;
+}
+
+.icon_cancel {
+  color: #cc2900;
+}
+
+.icon_undone {
+  color: #33cc33;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: Fredoka;
+  font-size: 24px;
+  color: #000066;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  outline: none;
+}
+
+input,
+button {
+  font-size: 24px;
+  font-family: Fredoka;
+  color: #000066;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 1 auto;
+  background-color: #ffe6cc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  background-color: #000066;
+}
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.header__logo {
+  border-radius: 50%;
+  background-color: #fafafa;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.header__title {
+  color: #fafafa;
+  font-weight: 700;
+}
+
+.creation {
+  margin: 50px 0 0 0;
+}
+.creation__input {
+  max-width: 600px;
+  margin: auto;
+  height: 50px;
+}
+.creation__input input {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid #000066;
+  padding: 0 100px 0 10px;
+}
+.creation__button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 50px;
+  width: 100px;
+  background-color: #ff8c1a;
+  border: 1px solid #000066;
+  border-radius: 15px;
+}
+@media (max-width: 420px) {
+  .creation__button {
+    width: 70px;
+  }
+  .creation__input input {
+    padding: 0 70px 0 5px;
+  }
+}
+
+.todo {
+  margin: 20px 0 0 0;
+}
+.todo__title {
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+.todo__list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px solid #000066;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.todo__item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+  align-items: center;
+}
+.todo__item:last-child {
+  margin: 0;
+}
+.todo__item:hover {
+  background-color: #fff2e6;
+}
+.todo__icons {
+  margin: 0 5px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 101px;
+}
+.todo__icons div {
+  cursor: pointer;
+  font-size: 24px;
+}
+.todo__text {
+  flex: 1 1 auto;
+}
+.todo__text p {
+  display: none;
+}
+.todo__text input {
+  background-color: #fff2e6;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 420px) {
+  .todo__icons {
+    flex: 0 0 84px;
+  }
+  .todo__icons div {
+    font-size: 20px;
+  }
+}
+
+.done {
+  margin: 20px 0 20px 0;
+}
+.done__title {
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+.done__list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #000066;
+  background-color: #fafafa;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.done__item {
+  display: flex;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+}
+.done__item:last-child {
+  margin: 0;
+}
+.done__item:hover {
+  background-color: #fff2e6;
+}
+.done__item:hover .done__text {
+  text-decoration: none;
+}
+.done__icons {
+  flex: 0 0 67.5px;
+  margin: 0 10px 0 0;
+  display: flex;
+}
+.done__icons span {
+  cursor: pointer;
+}
+.done__text {
+  flex: 1 1 auto;
+  text-decoration: line-through;
+}
+@media (max-width: 420px) {
+  .done__icons {
+    flex: 0 0 56px;
+  }
+  .done__icons div {
+    font-size: 20px;
+  }
+}
+
+.icon_cancel, .icon_update {
+  display: none;
+}
+
+.footer {
+  background-color: #000066;
+  flex: 0 0 80px;
+}
+.footer__text {
+  color: #fafafa;
+  font-weight: 500;
 }

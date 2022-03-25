@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/head.html', {
-"title": "Mainpage"
+"title": "ToDoApp"
 })
 
 <body>
-    @@include('html/header.html',{})
-    <main>
+    <div class="wrapper">
+        @@include('html/header.html',{})
+        <main class="page">
+            <section>
+                <div class="container">
+                    <div class="creation">
+                        <div class="creation__input">
+                            <input type="text" placeholder="Type your todo note...">
+                            <button class="creation__button">Add</button>
+                        </div>
+                    </div>
+                    <div class="todo">
+                        <h2 class="todo__title">ToDo List:</h2>
+                        <ul class="todo__list">
+                            <li class="todo__item">
+                                <div class="todo__icons">
+                                    <div class="icon_done"></div>
+                                    <div class="icon_delete"></div>
+                                    <div class="icon_edit"></div>
+                                    <div class="icon_update"></div>
+                                    <div class="icon_cancel"></div>
+                                </div>
+                                <div class="todo__text">
+                                    <input type="text">
+                                    <p>Make todo list until tomorrow morning or even the evening</p>
+                                </div>
+                            </li>
+                            <li class="todo__item">
+                                <div class="todo__icons">
+                                    <div class="icon_done"></div>
+                                    <div class="icon_delete"></div>
+                                    <div class="icon_edit"></div>
+                                </div>
+                                <div class="todo__text">
+                                    <input type="text">
+                                    <p>Make todo list</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="done">
+                        <h2 class="done__title">Done List:</h2>
+                        <ul class="done__list">
+                            <li class="done__item">
+                                <div class="done__icons">
+                                    <div class="icon_undone"></div>
+                                    <div class="icon_delete"></div>
+                                </div>
+                                <div class="done__text">learn html</div>
+                            </li>
+                        </ul>
+                    </div>
 
-    </main>
-    @@include('html/footer.html',{})
+                </div>
+            </section>
+        </main>
+        @@include('html/footer.html',{})
+    </div>
     <script src="js/app.min.js"></script>
 </body>
 

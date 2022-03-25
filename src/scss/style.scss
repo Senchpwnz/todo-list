@@ -1,2 +1,250 @@
 @import "fonts";
+@import "fontello";
 
+$main-color: #000066;
+$light-color: #fafafa;
+$secondary-color: #ff8c1a;
+$secondary-color-2: #ffe6cc;
+$secondary-color-3: #fff2e6;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+body,
+html {
+    height: 100%;
+    font-family: Fredoka;
+    font-size: 24px;
+    color: $main-color;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+input {
+    outline: none;
+}
+input,
+button {
+    font-size: 24px;
+    font-family: Fredoka;
+    color: $main-color;
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.page {
+    flex: 1 1 auto;
+    background-color: $secondary-color-2;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header {
+    background-color: $main-color;
+    
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+    &__logo {
+        border-radius: 50%;
+        background-color: $light-color;
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+    &__title {
+        color: $light-color;
+        font-weight: 700;
+    }
+}
+
+.creation {
+    margin: 50px 0 0 0;
+
+    &__input {
+        max-width: 600px;
+        margin: auto;
+        height: 50px;
+    }
+    &__input input {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        border: 1px solid $main-color;
+        padding: 0 100px 0 10px;
+    }
+
+    &__button {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 50px;
+        width: 100px;
+        background-color: $secondary-color;
+        border: 1px solid $main-color; 
+        border-radius: 15px;
+    }
+    @media (max-width: 420px) {
+        &__button {
+            width: 70px;
+        }
+        &__input input {
+            padding: 0 70px 0 5px;
+        }
+    }
+}
+.todo {
+    margin: 20px 0 0 0;
+
+    &__title {
+        text-align: center;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+    }
+
+    &__list {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: $light-color;
+        border: 1px solid $main-color;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 0 10px 0;
+        border-radius: 5px;
+        align-items: center;
+    }
+    &__item:last-child {
+        margin: 0;
+    }
+    &__item:hover {
+        background-color: $secondary-color-3;
+    }
+
+    &__icons {
+        margin: 0 5px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 101px;
+    }
+    &__icons div {
+        cursor: pointer;
+        font-size: 24px;
+    }
+    &__text {
+        flex: 1 1 auto;
+    }
+    &__text p {
+        display: none;
+    }
+    &__text input {
+        background-color: $secondary-color-3;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+    }
+    @media (max-width: 420px) {
+        &__icons {
+            flex: 0 0 84px
+        }
+        &__icons div {
+            font-size: 20px;
+        }
+    }
+}
+.done {
+    margin: 20px 0 20px 0;
+    &__title {
+        text-align: center;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+    }
+
+    &__list {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid $main-color;
+        background-color: $light-color;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        margin: 0 0 10px 0;
+        border-radius: 5px;
+    }
+    &__item:last-child {
+        margin: 0;
+    }
+    &__item:hover {
+        background-color: $secondary-color-3;
+    }
+    &__item:hover &__text {
+        text-decoration: none;
+    }
+
+    &__icons {
+        flex: 0 0 67.5px;
+        margin: 0 10px 0 0;
+        display: flex;
+    }
+    &__icons span {
+        cursor: pointer;
+    }
+
+    &__text {
+        flex: 1 1 auto;
+        text-decoration: line-through;
+    }
+    @media (max-width: 420px) {
+        &__icons {
+            flex: 0 0 56px;
+        }
+        &__icons div {
+            font-size: 20px;
+        }
+    }
+}
+.icon {
+    &_cancel,
+    &_update {
+        display: none;
+    }
+}
+
+
+.footer {
+    background-color: $main-color;
+    flex: 0 0 80px;
+
+    &__text {
+        color: $light-color;
+        font-weight: 500;
+    }
+}

@@ -18,6 +18,7 @@ import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { svgIcons } from "./gulp/tasks/svgSprite.js";
+import { fontIcons } from "./gulp/tasks/fontIcons.js";
 import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { server } from "./gulp/tasks/server.js";
 import { zip } from "./gulp/tasks/zip.js";
@@ -33,7 +34,7 @@ export { svgIcons };
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-const mainTasks = gulp.parallel(fonts, html, scss, js, images);
+const mainTasks = gulp.parallel(fonts, fontIcons, html, scss, js, images);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);

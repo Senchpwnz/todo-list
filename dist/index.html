@@ -4,16 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Mainpage</title>
+    <title>ToDoApp</title>
 </head>
 
 <body>
-    <header>
+    <div class="wrapper">
+        <header class="header">
+    <div class="container">
+        <div class="header__wrap">
+            <div class="header__logo"></div>
+            <h1 class="header__title">ToDoApp</h1>
+        </div>
+    </div>
 </header>
-    <main>
+        <main class="page">
+            <section>
+                <div class="container">
+                    <div class="creation">
+                        <div class="creation__input">
+                            <input type="text" placeholder="Type your todo note...">
+                            <button class="creation__button">Add</button>
+                        </div>
+                    </div>
+                    <div class="todo">
+                        <h2 class="todo__title">ToDo List:</h2>
+                        <ul class="todo__list">
+                            <li class="todo__item">
+                                <div class="todo__icons">
+                                    <div class="icon_done"></div>
+                                    <div class="icon_delete"></div>
+                                    <div class="icon_edit"></div>
+                                    <div class="icon_update"></div>
+                                    <div class="icon_cancel"></div>
+                                </div>
+                                <div class="todo__text">
+                                    <input type="text">
+                                    <p>Make todo list until tomorrow morning or even the evening</p>
+                                </div>
+                            </li>
+                            <li class="todo__item">
+                                <div class="todo__icons">
+                                    <div class="icon_done"></div>
+                                    <div class="icon_delete"></div>
+                                    <div class="icon_edit"></div>
+                                </div>
+                                <div class="todo__text">
+                                    <input type="text">
+                                    <p>Make todo list</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="done">
+                        <h2 class="done__title">Done List:</h2>
+                        <ul class="done__list">
+                            <li class="done__item">
+                                <div class="done__icons">
+                                    <div class="icon_undone"></div>
+                                    <div class="icon_delete"></div>
+                                </div>
+                                <div class="done__text">learn html</div>
+                            </li>
+                        </ul>
+                    </div>
 
-    </main>
-    <footer></footer>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+    <div class="container">
+        <h3 class="footer__text">Created by Sench</h3>
+    </div>
+</footer>
+    </div>
     <script src="js/app.min.js"></script>
 </body>
 
