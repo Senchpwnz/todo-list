@@ -21,14 +21,15 @@
             <section>
                 <div class="container">
                     <div class="creation">
-                        <div class="creation__input">
-                            <input type="text" placeholder="Type your todo note...">
-                            <button class="creation__button">Add</button>
+                        <div class="creation__form">
+                            <input id="creation__input" class="creation__input" type="text"
+                                placeholder="Type your todo note...">
+                            <button id="creation__button" class="creation__button">Add</button>
                         </div>
                     </div>
                     <div class="todo">
                         <h2 class="todo__title">ToDo List:</h2>
-                        <ul class="todo__list">
+                        <ul class="todo__list" id="todo__list">
                             <li class="todo__item">
                                 <div class="todo__icons">
                                     <div class="icon_done"></div>
@@ -57,7 +58,7 @@
                     </div>
                     <div class="done">
                         <h2 class="done__title">Done List:</h2>
-                        <ul class="done__list">
+                        <ul class="done__list" id="done__list">
                             <li class="done__item">
                                 <div class="done__icons">
                                     <div class="icon_undone"></div>
@@ -76,6 +77,7 @@
         <h3 class="footer__text">Created by Sench</h3>
     </div>
 </footer>
+        <script src="js/app.js"></script>
     </div>
     <script src="js/app.min.js"></script>
 </body>
