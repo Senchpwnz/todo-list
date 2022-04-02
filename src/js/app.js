@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
 
     const CREATION_INPUT = document.querySelector("#creation__input");
@@ -6,6 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const DONE_LIST = document.querySelector("#done__list");
 
     let toDoStorage, doneStorage, nextId;
+=======
+import { getIndex } from "./modules/getIndex.js";
+import { sortStorage } from "./modules/sortStorage.js"
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const creationInput = document.querySelector("#creation__input");
+    const creationButton = document.querySelector("#creation__button");
+    const toDoList = document.querySelector("#todo__list");
+    const doneList = document.querySelector("#done__list");
+
+    let toDoStorage, doneStorage, nextId
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
 
     if (!localStorage.getItem("toDoStorage")) {
         toDoStorage = [];
@@ -23,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nextId = 1;
         localStorage.setItem("nextId", nextId)
     } else {
+<<<<<<< HEAD
         nextId = localStorage.getItem("nextId")
     }
 
@@ -60,6 +75,36 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 })
                 this.storage = sorted;
+=======
+        nextId = localStorage.getItem(nextId)
+    }
+
+
+    const toDoApp = {
+        creationInput: creationInput,
+        creationButton: creationButton,
+        nextId: nextId,
+        todo: {
+            list: toDoList,
+            storage: toDoStorage,
+            getItemIndex(id) {
+                return getIndex(id, this.storage);
+            },
+            sort() {
+                let arr = this.storage;
+                this.storage = sortStorage(arr)
+            }
+        },
+        done: {
+            list: doneList,
+            storage: doneStorage,
+            getItemIndex(id) {
+                return getIndex(id, this.storage);
+            },
+            sort() {
+                let arr = this.storage;
+                this.storage = sortStorage(arr)
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
             }
         },
         loadItems() {
@@ -70,12 +115,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 let id = element.id;
                 let text = element.text;
 
+<<<<<<< HEAD
 
                 let li = document.createElement("li");
                 li.classList.add("todo__item");
                 li.dataset.id = id;
                 li.innerHTML = `<div class="todo__icons">\n\t<div class="icon_done"></div>\n\t<div class="icon_delete"></div>\n\t<div class="icon_edit"></div>\n\t<div class="icon_update"></div>\n\t<div class="icon_cancel"></div>\n</div>\n<div class="todo__text">\n\t<input type="text" class="todo__input" autofocus>\n\t<p>${element.text}</p>\n</div>`;
                 this.todo.list.prepend(li);
+=======
+                let li = document.createElement("li");
+                li.classList.add("todo__item");
+                li.dataset.id = id;
+                li.innerHTML = `<div class="todo__icons">\n\t<div class="icon_done"></div>\n\t<div class="icon_delete"></div>\n\t<div class="icon_edit"></div>\n\t<div class="icon_update"></div>\n\t<div class="icon_cancel"></div>\n</div>\n<div class="todo__text">\n\t<input type="text">\n\t<p>${newToDo.text}</p>\n</div>`
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
             });
 
             doneItems.forEach(element => {
@@ -85,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let li = document.createElement("li");
                 li.classList.add("done__item");
                 li.dataset.id = id;
+<<<<<<< HEAD
                 li.innerHTML = `<div class="done__icons">\n\t<div class="icon_undone"></div>\n\t<div class="icon_delete"></div>\n</div>\n<div class="done__text">${element.text}</div>`;
                 this.done.list.prepend(li);
             });
@@ -92,21 +145,37 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         addItem() {
             let element = {
+=======
+                li.innerHTML = `<div class="done__icons">\n\t<div class="icon_undone"></div>\n\t<div class="icon_delete"></div>\n</div>\n<div class="done__text">learn html</div>`
+            });
+        },
+        addItem() {
+            let newToDo = {
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
                 id: this.nextId,
                 text: this.creationInput.value
             };
 
             let li = document.createElement("li");
             li.classList.add("todo__item");
+<<<<<<< HEAD
             li.dataset.id = element.id;
             li.innerHTML = `<div class="todo__icons">\n\t<div class="icon_done"></div>\n\t<div class="icon_delete"></div>\n\t<div class="icon_edit"></div>\n\t<div class="icon_update"></div>\n\t<div class="icon_cancel"></div>\n</div>\n<div class="todo__text">\n\t<input type="text" class="todo__input">\n\t<p>${element.text}</p>\n</div>`;
             this.todo.list.prepend(li);
 
             this.todo.storage.push(element);
+=======
+            li.dataset.id = newToDo.id;
+            li.innerHTML = `<div class="todo__icons">\n\t<div class="icon_done"></div>\n\t<div class="icon_delete"></div>\n\t<div class="icon_edit"></div>\n\t<div class="icon_update"></div>\n\t<div class="icon_cancel"></div>\n</div>\n<div class="todo__text">\n\t<input type="text">\n\t<p>${newToDo.text}</p>\n</div>`
+            this.todo.list.append(li);
+
+            this.todo.storage.push(newToDo);
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
             this.nextId++;
             localStorage.setItem("toDoStorage", JSON.stringify(this.todo.storage));
             localStorage.setItem("nextId", this.nextId);
             this.creationInput.value = '';
+<<<<<<< HEAD
             this.checkLists();
         },
         removeItem(item) {
@@ -115,10 +184,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (parent == this.todo.list) {
                 let index = this.todo.storage.findIndex(el => el.id == id)
+=======
+        },
+        removeItem(item) {
+            let itemId = item.dataset.id;
+            let parent = item.parentNode
+            if (parent == this.todo.list) {
+                let index = this.todo.getItemIndex(itemId);
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
                 this.todo.storage.splice(index, 1);
                 localStorage.setItem("toDoStorage", JSON.stringify(this.todo.storage));
                 this.todo.list.removeChild(item);
             } else if (parent == this.done.list) {
+<<<<<<< HEAD
                 let index = this.done.storage.findIndex(el => el.id == id)
                 this.done.storage.splice(index, 1);
                 localStorage.setItem("doneStorage", JSON.stringify(this.done.storage));
@@ -317,6 +395,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+=======
+                let index = this.done.getItemIndex(itemId);
+                this.done.storage.splice(index, 1);
+                localStorage.setItem("toDoStorage", JSON.stringify(this.todo.storage));
+                this.done.storage.removeChild(item);
+            }
+
+        }
+
+    };
+
+
+    creationButton.addEventListener("click", function () {
+        toDoApp.addItem();
+    });
+    toDoList.addEventListener("click", function (e) {
+        if (e.target.classList.contains("icon_delete")) {
+            let itemToRemove = e.target.parentNode.parentNode;
+            toDoApp.removeItem(itemToRemove)
+        }
+    });
+>>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
 
 
 });
