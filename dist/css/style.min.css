@@ -287,7 +287,7 @@ button {
 .todo__text {
   flex: 1 1 auto;
 }
-.todo__text input {
+.todo__input {
   display: none;
   background-color: #fff2e6;
   border-radius: 5px;
@@ -340,7 +340,7 @@ button {
   margin: 0 10px 0 0;
   display: flex;
 }
-.done__icons span {
+.done__icons div {
   cursor: pointer;
 }
 .done__text {
@@ -356,8 +356,20 @@ button {
   }
 }
 
+.back-color {
+  background-color: #fff2e6;
+}
+
 .icon_cancel, .icon_update {
   display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 .footer {
