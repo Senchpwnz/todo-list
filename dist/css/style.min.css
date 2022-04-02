@@ -287,11 +287,7 @@ button {
 .todo__text {
   flex: 1 1 auto;
 }
-<<<<<<< HEAD
 .todo__input {
-=======
-.todo__text input {
->>>>>>> 3dedd6eb29dfefa66fd1dea4143440c0c65d420e
   display: none;
   background-color: #fff2e6;
   border-radius: 5px;
